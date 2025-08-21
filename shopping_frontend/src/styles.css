@@ -1,35 +1,47 @@
-/* Global styles for minimalistic design */
+/* Global styles aligned to the style guide */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --color-primary: #1e88e5;
-  --color-secondary: #1565c0;
-  --color-accent: #e53935;
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --border: #e5e7eb;
-  --shadow: 0 2px 8px rgba(0,0,0,.06);
+  --bg-canvas: #EEF2F7;
+  --bg-card: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #6B7280;
+  --primary: #2563EB;
+  --primary-strong: #1E40AF;
+  --accent: #e53935;
+  --border: #E5E7EB;
+  --shadow: 0 10px 24px rgba(0,0,0,0.08);
+
   --radius: 12px;
+  --radius-card: 16px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
 }
 
 html, body {
   height: 100%;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+/* Container helper for pages that need it */
+.container {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
 }
 
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+/* Buttons baseline */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -40,11 +52,12 @@ html, body {
   border: none;
   cursor: pointer;
 }
-.btn.primary { background: var(--color-primary); color: #fff; }
-.btn.secondary { background: var(--color-secondary); color: #fff; }
-.btn.accent { background: var(--color-accent); color: #fff; }
-.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn.primary { background: var(--primary); color: #fff; }
+.btn.secondary { background: var(--primary-strong); color: #fff; }
+.btn.accent { background: var(--accent); color: #fff; }
+.btn.ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
 
+/* Inputs */
 .input {
   width: 100%;
   padding: 10px 12px;
@@ -53,6 +66,7 @@ html, body {
   background: #fff;
 }
 
+/* Flexible grid helpers */
 .grid {
   display: grid;
   gap: 16px;
@@ -60,6 +74,22 @@ html, body {
 .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Product grid enhancement */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card hover elevation */
+.card-hover {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
 
 @media (max-width: 900px) {
   .grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

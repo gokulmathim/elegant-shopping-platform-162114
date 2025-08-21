@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   // PUBLIC_INTERFACE
   /** Title is used in footers and metadata. */
-  title = 'Elegant Shop';
+  title = 'Elegant Shop — Online Shopping';
 
   private router = inject(Router);
   private catalog = inject(CatalogService);

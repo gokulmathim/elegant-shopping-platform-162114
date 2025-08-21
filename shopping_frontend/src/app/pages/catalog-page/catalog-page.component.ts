@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CatalogService } from '../../services/catalog.service';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
-import { Product } from '../../models/types';
-import { map } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -12,7 +10,7 @@ import { map } from 'rxjs';
   imports: [CommonModule, ProductCardComponent],
   template: `
     <section>
-      <div class="grid cols-3">
+      <div class="product-grid">
         <app-product-card *ngFor="let p of products$ | async" [product]="p"></app-product-card>
       </div>
       <div *ngIf="(products$ | async)?.length === 0" class="empty">No products match your filters.</div>

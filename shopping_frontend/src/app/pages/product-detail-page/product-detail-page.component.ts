@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
   template: `
   <div *ngIf="vm$ | async as vm" class="grid cols-2">
-    <div class="card">
-      <img [src]="vm.image" [alt]="vm.title" style="width:100%; border-radius: 12px 12px 0 0;">
+    <div class="card" style="overflow:hidden;">
+      <img [src]="vm.image" [alt]="vm.title" style="width:100%; display:block; border-radius: 0; aspect-ratio: 4/3; object-fit: cover;">
     </div>
     <div>
       <h1 style="margin-bottom:8px">{{ vm.title }}</h1>

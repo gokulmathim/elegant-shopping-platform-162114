@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   template: `
   <section>
     <h2 style="margin-bottom:12px">Your Orders</h2>
-    <div *ngIf="justPlaced" class="card" style="padding:12px; margin-bottom:12px; border-left:4px solid var(--color-primary)">
+    <div *ngIf="justPlaced" class="card" style="padding:12px; margin-bottom:12px; border-left:4px solid var(--primary)">
       Order {{ justPlaced }} placed successfully. You will receive updates via email.
     </div>
     <div *ngFor="let o of orders" class="card" style="padding:12px; margin-bottom:10px">

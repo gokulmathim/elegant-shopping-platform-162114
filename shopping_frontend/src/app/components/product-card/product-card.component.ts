@@ -9,7 +9,7 @@ import { CartService } from '../../services/cart.service';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
-  <div class="card card-wrap">
+  <div class="card card-hover card-wrap">
     <a [routerLink]="['/product', product?.id]" class="img-wrap">
       <img [src]="product?.image" [alt]="product?.title" />
     </a>
@@ -27,8 +27,8 @@ import { CartService } from '../../services/cart.service';
   </div>
   `,
   styles: [`
-    .card-wrap { overflow: hidden; }
-    .img-wrap { display:block; aspect-ratio: 4/3; overflow: hidden; }
+    .card-wrap { overflow: hidden; border-radius: 14px; }
+    .img-wrap { display:block; aspect-ratio: 4/3; overflow: hidden; background:#F8F9FB; }
     img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; display:block; }
     .img-wrap:hover img { transform: scale(1.05); }
     .content { padding: 12px; }
