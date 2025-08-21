@@ -66,6 +66,8 @@
 
     <section class="content">
       <router-outlet />
+      <!-- Mobile spacer so content isn't hidden behind bottom nav -->
+      <div class="mobile-bottom-spacer" aria-hidden="true"></div>
     </section>
 
     <footer class="footer">
@@ -76,4 +78,7 @@
       </div>
     </footer>
   </div>
+
+  <!-- Global bottom navigation (mobile only) -->
+  <app-bottom-nav></app-bottom-nav>
 </div>

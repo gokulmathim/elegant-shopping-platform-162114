@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CatalogService } from './services/catalog.service';
 import { CartService } from './services/cart.service';
 import { Observable } from 'rxjs';
+import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet, BottomNavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -254,6 +254,15 @@
   padding-top: 16px;
 }
 
+/* Spacer to avoid overlap with fixed bottom nav on mobile */
+.mobile-bottom-spacer {
+  display: none;
+  height: 72px; /* > bottom-nav height to add some comfort */
+}
+@media (max-width: 768px) {
+  .mobile-bottom-spacer { display: block; }
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
