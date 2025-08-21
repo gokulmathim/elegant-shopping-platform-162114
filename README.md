@@ -1,1 +1,3 @@
-# elegant-shopping-platform-162114
+# Project Repository
+
+This is the initial README file for the project.
