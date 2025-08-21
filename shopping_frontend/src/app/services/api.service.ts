@@ -7,11 +7,77 @@ import { Product, Order, UserProfile, CheckoutRequest, CheckoutSessionResponse }
 export class ApiService {
   /** This service mocks a REST API. Replace endpoints with real backend integration. */
   private products: Product[] = [
-    { id: '1', title: 'Modern Chair', description: 'Ergonomic and stylish.', image: 'https://picsum.photos/seed/chair/400/300', category: 'Furniture', price: 129.99, rating: 4.5, stock: 12 },
-    { id: '2', title: 'Wireless Headphones', description: 'Noise-cancelling premium sound.', image: 'https://picsum.photos/seed/headphones/400/300', category: 'Electronics', price: 199.99, rating: 4.7, stock: 8 },
-    { id: '3', title: 'Running Shoes', description: 'Lightweight and durable.', image: 'https://picsum.photos/seed/shoes/400/300', category: 'Sports', price: 89.99, rating: 4.3, stock: 25 },
-    { id: '4', title: 'Coffee Maker', description: 'Brew the perfect cup.', image: 'https://picsum.photos/seed/coffee/400/300', category: 'Home', price: 59.99, rating: 4.1, stock: 40 },
-    { id: '5', title: 'Sleek Desk Lamp', description: 'Minimal LED lamp.', image: 'https://picsum.photos/seed/lamp/400/300', category: 'Home', price: 39.99, rating: 4.0, stock: 52 },
+    // Matches mockup list with sensible categories and placeholder images
+    {
+      id: 'p1',
+      title: 'Minimal Sneakers',
+      description: 'Clean minimal silhouette for everyday comfort.',
+      image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop', // sneakers placeholder
+      category: 'Fashion',
+      price: 59.00,
+      rating: 4.3,
+      stock: 20
+    },
+    {
+      id: 'p2',
+      title: 'Leather Backpack',
+      description: 'Premium tan leather backpack with modern profile.',
+      image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop', // tan handbag-style backpack
+      category: 'Accessories',
+      price: 120.00,
+      rating: 4.6,
+      stock: 15
+    },
+    {
+      id: 'p3',
+      title: 'Classic Watch',
+      description: 'Timeless analog watch with leather strap.',
+      image: 'https://images.unsplash.com/photo-1516570161787-2fd917215a3d?q=80&w=1200&auto=format&fit=crop',
+      category: 'Accessories',
+      price: 149.00,
+      rating: 4.5,
+      stock: 10
+    },
+    {
+      id: 'p4',
+      title: 'Sunglasses',
+      description: 'Polarized lenses with a classic frame.',
+      image: 'https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop',
+      category: 'Accessories',
+      price: 59.00,
+      rating: 4.2,
+      stock: 30
+    },
+    {
+      id: 'p5',
+      title: 'Denim Jacket',
+      description: 'Mid-wash denim jacket with a modern fit.',
+      image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop',
+      category: 'Fashion',
+      price: 99.00,
+      rating: 4.4,
+      stock: 18
+    },
+    {
+      id: 'p6',
+      title: 'Wireless Headphones',
+      description: 'Noise-cancelling over-ear headphones.',
+      image: 'https://images.unsplash.com/photo-1518441902113-c1d3d249c1dd?q=80&w=1200&auto=format&fit=crop',
+      category: 'Electronics',
+      price: 199.00,
+      rating: 4.7,
+      stock: 12
+    },
+    {
+      id: 'p7',
+      title: 'Red T-Shirt',
+      description: 'Soft cotton tee in vibrant red.',
+      image: 'https://images.unsplash.com/photo-1521575107034-e0fa0b594529?q=80&w=1200&auto=format&fit=crop',
+      category: 'Fashion',
+      price: 29.00,
+      rating: 4.1,
+      stock: 40
+    }
   ];
 
   private orders: Order[] = [];
