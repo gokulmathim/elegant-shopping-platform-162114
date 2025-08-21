@@ -1,3 +1,52 @@
-<div class="container">
-  <h1>{{ title }}</h1>
+<header class="topbar">
+  <div class="brand" routerLink="/">🛍️ Elegant Shop</div>
+  <div class="search">
+    <input type="text" [(ngModel)]="query" placeholder="Search products..." (keyup.enter)="onSearch()" />
+    <button (click)="onSearch()">Search</button>
+  </div>
+  <nav class="actions">
+    <a routerLink="/orders" class="link">Orders</a>
+    <a routerLink="/profile" class="link">Profile</a>
+    <button class="cart-btn" routerLink="/cart" aria-label="Cart">
+      🛒
+      <span class="badge" *ngIf="cartCount$ | async as c">{{ c }}</span>
+    </button>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li><a (click)="filterBy('all')">All</a></li>
+      <li *ngFor="let cat of categories$ | async">
+        <a (click)="filterBy(cat)">{{ cat }}</a>
+      </li>
+    </ul>
+    <div class="filters">
+      <h4>Filters</h4>
+      <label>
+        Min $
+        <input type="number" [(ngModel)]="minPrice" />
+      </label>
+      <label>
+        Max $
+        <input type="number" [(ngModel)]="maxPrice" />
+      </label>
+      <button (click)="applyFilters()">Apply</button>
+      <button class="link" (click)="clearFilters()">Clear</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet />
+  </main>
 </div>
+
+<footer class="footer">
+  <div>© {{year}} Elegant Shop</div>
+  <div class="links">
+    <a routerLink="/privacy">Privacy</a>
+    <a routerLink="/terms">Terms</a>
+  </div>
+</footer>
